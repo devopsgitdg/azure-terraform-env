@@ -1,0 +1,15 @@
+---
+
+user: azureuser
+ 
+ansible_ssh_pass: "{{ vault_ssh_becm_pass }}"
+ansible_become_pass: "{{ vault_ssh_becm_pass }}"
+# db_name: jiradb
+  # - confluence
+  # - "jiradb"
+  # - "edb"
+ 
+az_server: 20.62.97.104
+ssh_key: ../ssh-keys/terraform-azure.pem
+ssh_key_sub: ../ssh-keys/terraform-azure.pub
+ 

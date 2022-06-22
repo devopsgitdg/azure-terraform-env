@@ -1,0 +1,60 @@
+---
+  
+  - name: Task 1 check if kpatch is available
+    shell: yum search $(uname -r)
+    register: kpatch_version
+    # become: true
+  
+  - debug:
+      var: kpatch_version
+  
+  # use this to compare if the patch is install is not what the search outputs
+  - name: Task 4 kpatch list
+    shell: kpatch list
+    register: kpatch_list
+
+  - debug: 
+      var: kpatch_list
+
+  # - name: Set the variable kpatch_version
+  #   set_fact: 
+  #     kpatch_version: "{% kpatch_version.stdout == '0'}false{% else %}true{% endif %}"
+
+  - name: Task 2 install patch
+    shell: yum install $(uname -r | head -1) | awk '/kpatch-patch/ {print $1}'
+    register: kpatch_install
+
+  - debug: 
+      var: kpatch_install
+
+  - name: Task 2a update cumulative patch
+    shell: yum update $(uname -r | head -1) | awk '/kpatch-patch/ {print $1}'
+    register: kpatch_update
+
+ 
+  - debug: 
+      var: kpatch_update
+
+  - name: Task 3 - check if reboot required  
+    shell: needs-restarting -r
+    #when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    ignore_errors: true
+    register: reboot_required
+    become: true
+
+  - name: Task 4 kpatch list
+    shell: kpatch list
+    register: kpatch_list
+
+  - debug: 
+      var: kpatch_list
+
+  # - name: Task 10 - check if all the systems responding to ssh
+  #   local_action:
+  #    module: wait_for host={{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}
+  #    port: 22
+  #    search_regex: OpenSSH
+  #    delay: 15
+  #    timeout: 300
+  #    state: started
+  #    become: true

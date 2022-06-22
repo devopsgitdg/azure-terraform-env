@@ -1,0 +1,9 @@
+;172.28.119.240 ansible_connection=local
+
+[azserver]
+ az_vm ansible_host=20.62.97.104
+
+ 
+ 
+ 
+ 

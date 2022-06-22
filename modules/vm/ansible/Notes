@@ -1,0 +1,9 @@
+sudo ansible all -m ping --private-key=../ssh-keys/terraform-azure.pem -u azureuser -vvv
+
+sudo yum search kpatch $(uname -r | head -1 | awk '{print $1}')
+
+sudo yum search kpatch-patch=$(sed -e 's/[kpatch]/i/*/g' | $(uname -r | head -1))
+
+----
+proper working commands
+sudo yum install kpatch $(uname -r | head -1) | awk '/kpatch-patch/ {print $1}'

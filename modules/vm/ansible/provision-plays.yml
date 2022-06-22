@@ -1,0 +1,26 @@
+---
+ 
+- hosts: server
+  become: yes
+  become_user: root
+  become_method: sudo
+ 
+  # gather info like variables
+  # gather_facts: true
+  # include_vars:
+      
+  roles:
+    #- testping
+     - live_patching
+     
+
+
+   
+ 
+
+ 
+ 
+ 
+
+ 
+ 

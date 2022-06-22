@@ -1,0 +1,13 @@
+---
+# tasks file for roles/live-patching
+---
+- hosts: all
+  user: "{{ user }}"
+  # vars:
+  #   ansible_become_pass: "{{ vault_ssh_becm_pass }}"
+  tasks:
+    - name: Ping all hosts
+      ping:
+    - name: Print a message
+      debug:
+        msg: 'All set'
