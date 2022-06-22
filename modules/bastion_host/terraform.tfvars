@@ -1,12 +1,13 @@
 /* location             = "eastus2" */
 
 
-business_divsion        = "Ops"
+/* business_divsion        = "Ops"
 environment             = "dev"
 resource_group_name     = "dg_rg"
 resource_group_location = "eastus2"
 virtual_network_name    = "dg-vnet-1"
-subnet_name             = "dg-subnet-dev-1"
+subnet_name             = "dg-subnet-dev-1" */
+
 /* vnet_address_space      = ["10.1.0.0/16"] */
 
 /* web_subnet_name = "websubnet"
