@@ -1,13 +1,11 @@
 # Azure Bastion
 # Pull Virtual Network
-data "azurerm_virtual_network" "dg-vnets" {
-  name = var.virtual_network_name
-  /* address_space       = var.vnet_address_space */
-  /* location            = azurerm_resource_group.dg_rg.location */
-  resource_group_name = data.azurerm_resource_group.dg_rg.name
-}
+/* data "azurerm_virtual_network" "dg-vnets" {
+  name = var.virtual_network_name 
+  resource_group_name = data.azurerm_resource_group.dg_rg.name 
+} */
 
-
+/* 
 resource "azurerm_subnet" "bastion_service_subnet" {
   name                 = var.bastion_service_subnet_name
   resource_group_name  = data.azurerm_resource_group.dg_rg.name
@@ -21,7 +19,7 @@ resource "azurerm_public_ip" "bastion_service_publicip" {
   resource_group_name = data.azurerm_resource_group.dg_rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
-}
+} */
 
  
 # Resource-1: Create Bastion / Management Subnet

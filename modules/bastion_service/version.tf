@@ -6,7 +6,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.3.0" # Optional but recommended in production
+      version = "> 3.3.0" # Optional but recommended in production
     }
   }
 }
@@ -18,10 +18,4 @@ provider "azurerm" {
   skip_provider_registration = true
 }
 
-
-resource "random_string" "dg_random" {
-  length  = 6
-  upper   = false
-  special = false
-
-}
+ 
