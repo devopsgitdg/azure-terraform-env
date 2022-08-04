@@ -29,6 +29,7 @@ resource "azurerm_key_vault" "dg_vault" {
     secret_permissions = [
       "Set",
       "Get",
+      "List",
       "Delete",
       "Purge",
       "Recover"
