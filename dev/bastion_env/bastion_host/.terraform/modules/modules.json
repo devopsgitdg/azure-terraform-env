@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bastion_host","Source":"../../../modules/bastion_host","Dir":"../../../modules/bastion_host"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bastion_host","Source":"git::https://github.com/hbdevops1/azure-terraform-env//modules/bastion_host","Dir":".terraform/modules/bastion_host/modules/bastion_host"}]}

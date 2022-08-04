@@ -16,22 +16,21 @@ nic_name = "dev-vmnic1" */
 /* } */
 
 
-/* module "bastion_service"{
-
-    source = "./modules/bastion"
-
+ /* module "bastion_service"{
     # resources
-    location             = "eastus2"
-    resource_group_name = "tfstate"
-    virtual_network_name = "dg-vnets"
-    subnet_name = "bas-subnet"
-    publicip_name = "bastionip"
+    source = "./modules/bastion_service"
+
+ 
+   business_divsion        = "Ops"
+   environment             = "dev"
+   resource_group_name     = "dev_dg_rg1"
+   resource_group_location = "eastus2"
+   virtual_network_name    = "dg-vnet-1" 
+
+}  */
 
 
-} */
-
-
-module "bastion_host"{
+/* module "bastion_host"{
 
 source = "./modules/bastion_host"
 
@@ -42,4 +41,4 @@ resource_group_location = "eastus2"
 virtual_network_name    = "dg-vnet-1"
 subnet_name             = "dg-subnet-dev-1"
 
-}
+} */

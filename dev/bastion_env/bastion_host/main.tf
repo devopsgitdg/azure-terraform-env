@@ -1,8 +1,8 @@
 
+module "bastion_host" {
 
-module "bastion_host"{
 
-source = "../../../modules/bastion_host"
+source = "git::https://github.com/hbdevops1/azure-terraform-env//modules/bastion_host"
 
 business_divsion        = "Ops"
 environment             = "dev"
